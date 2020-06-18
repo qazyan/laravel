@@ -52,6 +52,8 @@ Route::any('/add_list_op','ProjectController@add_list_op');
 Route::any('/update_list','ProjectController@update_list');
 Route::any('/update_list_op','ProjectController@update_list_op');
 
+Route::any('/change_color','ProjectController@change_color');
+
 
 Route::any('/delSelect','ProjectController@delSelect');
 
