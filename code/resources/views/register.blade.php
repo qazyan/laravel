@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 
-<body>
+<body style="background-color: {{Session::get('color')}}">
 <div style="margin: auto;width: 500px;margin-top: 100px">
 <form method="post">
     <div class="form-group">

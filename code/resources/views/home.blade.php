@@ -81,13 +81,14 @@
         clear: both;
     }
 </style>
-<body>
+<body style="background-color: {{Session::get('color')}}">
 <div class="container" style="width: 700px;margin: auto;margin-top: 50px">
 <div style="float: left">
     <a class="btn btn-primary" href="add_thing">添加</a>
 </div>
 <div style="float: right;margin: 5px">
     <button class="btn btn-danger btn-submit" onclick="out();">注销</button>
+    <a class="btn btn-primary" href="change_color">背景</a>
 </div>
 
     <table border="1" class="table table-bordered table-hover" >

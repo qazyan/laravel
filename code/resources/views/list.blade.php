@@ -118,7 +118,7 @@
         }
     }
 </script>
-<body>
+<body style="background-color: {{Session::get('color')}}">
 <div class="container" style="width: 650px; margin:auto; margin-top: 50px">
 <div style="float: left">
     <a class="btn btn-primary" href="add_list">添加</a>

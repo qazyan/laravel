@@ -52,6 +52,7 @@ class ProjectController extends Controller
         }
         if ($flag){
             Session::put('name',$name);
+            Session::put('color','aliceblue');
             return redirect("/index");
         }else{
             print ("登录失败,请");
@@ -397,5 +398,19 @@ class ProjectController extends Controller
         $id = $request->get('id');
         Friend::where('id',$id)->delete();
         return redirect('list_all');
+    }
+
+    public function change_color(){
+        //#6deed0淡绿
+        //#827575灰色
+        //rgba(20,23,21,0.46)
+        $color = Session::get('color');
+        if ($color == 'aliceblue'){
+            Session::put('color','rgba(20,23,21,0.46)');
+        }
+        if ($color == 'rgba(20,23,21,0.46)'){
+            Session::put('color','aliceblue');
+        }
+        return redirect("/index");
     }
 }

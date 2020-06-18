@@ -58,3 +58,5 @@ Route::any('/delSelect','ProjectController@delSelect');
 Route::any('/find_friend','ProjectController@find_friend');
 Route::any('/add_friend','ProjectController@add_friend');
 Route::any('/delete_friend','ProjectController@delete_friend');
+
+Route::any('/change_color','ProjectController@change_color');

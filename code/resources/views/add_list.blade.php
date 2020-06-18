@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
-<body>
+<body style="background-color: rgba(20,23,21,0.46)">
 <div class="container" style="width: 600px">
     <center><h3>添加List</h3></center>
     <form action="add_list_op" method="post">
