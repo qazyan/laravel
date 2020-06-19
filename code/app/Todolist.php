@@ -9,4 +9,8 @@ class Todolist extends Model
     protected $table = "todolist";
     public $timestamps = false;
     protected $fillable = ['id','item','status','thing_id'];
+
+    public function table(){
+        return $this->table;
+    }
 }

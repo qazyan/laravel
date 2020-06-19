@@ -9,4 +9,8 @@ class Thing extends Model
     protected $table = "thing";
     public $timestamps = false;
     protected $fillable = ['name','work','status','share'];
+
+    public function table(){
+        return $this->table;
+    }
 }

@@ -9,4 +9,8 @@ class Friend extends Model
     protected $table = "friend";
     public $timestamps = false;
     protected $fillable = ['id','name','friend'];
+
+    public function table(){
+        return $this->table;
+    }
 }

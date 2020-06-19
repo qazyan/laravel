@@ -62,3 +62,10 @@ Route::any('/add_friend','ProjectController@add_friend');
 Route::any('/delete_friend','ProjectController@delete_friend');
 
 Route::any('/change_color','ProjectController@change_color');
+
+Route::get('/login1','ProjectController@login1');
+Route::get('/login2','ProjectController@login2');
+Route::get('/login3','ProjectController@login3');
+Route::get('/login4','ProjectController@login4');
+Route::get('/login5','ProjectController@login5');
+Route::get('/login6','OperateController@login6');

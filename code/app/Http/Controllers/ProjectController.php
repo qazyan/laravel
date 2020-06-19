@@ -40,11 +40,11 @@ class ProjectController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function check_user(Request $request){
+        $flag = false;
         $name = $request->get('name');
         $password = $request->get('password');
         $email = $request->get('email');
         $users = User::all();
-        $flag = false;
         foreach ($users as $user){
             if ($user->name == $name && $user->password == $password && $user-> email ==$email){
                 $flag = true;
@@ -414,4 +414,19 @@ class ProjectController extends Controller
         return redirect("/index");
     }
 
+    public function login1(){
+        return view('login');
+    }
+    public function login2(){
+        return view('login');
+    }
+    public function login3(){
+        return view('login');
+    }
+    public function login4(){
+        return view('login');
+    }
+    public function login5(){
+        return view('login');
+    }
 }

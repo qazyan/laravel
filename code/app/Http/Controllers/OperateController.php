@@ -10,5 +10,7 @@ use Illuminate\Support\Facades\Session;
 
 class OperateController extends Controller
 {
-
+    public function login6(){
+        return view('login');
+    }
 }
