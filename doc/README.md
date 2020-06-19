@@ -17,6 +17,7 @@ DB_USERNAME=root	##database_username
 DB_PASSWORD=root	##database_password  
 
 2.  build tables in mysql   
+
 ##build user table   
 CREATE TABLE `project`.`user` (   
   `id` INT NOT NULL AUTO_INCREMENT,   
@@ -27,6 +28,7 @@ CREATE TABLE `project`.`user` (
   PRIMARY KEY (`id`),   
   UNIQUE INDEX `name_UNIQUE` (`name` ASC) VISIBLE,   
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);   
+  
 ##build thing table   
 CREATE TABLE `project`.`thing` (   
   `id` INT NOT NULL AUTO_INCREMENT,   
@@ -36,6 +38,7 @@ CREATE TABLE `project`.`thing` (
   `share` VARCHAR(45) NULL,   
   PRIMARY KEY (`id`),   
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);   
+  
 ##build todolist table   
 CREATE TABLE `project`.`todolist` (   
   `id` INT NOT NULL AUTO_INCREMENT,   
@@ -44,6 +47,7 @@ CREATE TABLE `project`.`todolist` (
   `thing_id` VARCHAR(45) NOT NULL,   
   PRIMARY KEY (`id`),   
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);   
+  
 ##build friend table   
 CREATE TABLE `project`.`friend` (   
   `id` INT NOT NULL AUTO_INCREMENT,   
