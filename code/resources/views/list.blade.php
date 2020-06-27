@@ -84,7 +84,7 @@
 <script>
     function del_friend(id) {
         //用户安全提示
-        if (confirm("您确定要删除吗？")){
+        if (confirm("Are you sure you want to delete it ？")){
             location.href = "delete_friend?id="+id;
         }
     }
@@ -93,7 +93,7 @@
         //删除选中的记录
         document.getElementById("delSelect").onclick = function () {
             //表单提交
-            if (confirm("您确定要删除选中条目吗？")) {
+            if (confirm("Are you sure you want to delete the selected item?")) {
                 let flag = false;
                 //判断是否有选中条目
                 let cbs = document.getElementsByName("uid");
@@ -117,18 +117,20 @@
             }
         }
     }
+
 </script>
 <body style="background-color: {{Session::get('color')}}">
-<div class="container" style="width: 650px; margin:auto; margin-top: 50px">
+<h2 style="text-align: center">{{Session::get('work')}}</h2>
+<div class="container" style="width: 750px; margin:auto; margin-top: 50px">
 <div style="float: left">
-    <a class="btn btn-primary" href="add_list">添加</a>
-    <a class="btn btn-success" href="list_all">全部</a>
-    <a class="btn btn-success" href="list_do">进行中</a>
-    <a class="btn btn-success" href="list_end">已完成</a>
-    <a class="btn btn-success" href="del_list_end">删除已完成</a>
+    <a class="btn btn-primary" href="add_list">Add</a>
+    <a class="btn btn-success" href="list_all">All</a>
+    <a class="btn btn-success" href="list_do">Processing</a>
+    <a class="btn btn-success" href="list_end">Completed</a>
+    <a class="btn btn-success" href="del_list_end">DeleteCompleted</a>
     <div style="float: left" class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            好友
+            Friend
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -139,8 +141,8 @@
     </div>
 </div>
 <div style="float: right;margin: 5px">
-    <a class="btn btn-primary" href="javascript:void(0);" id="delSelect">删除选中</a>
-    <button class="btn btn-danger btn-submit" onclick="out();">返回</button>
+    <a class="btn btn-primary" href="javascript:void(0);" id="delSelect">DeleteSelect</a>
+    <button class="btn btn-danger btn-submit" onclick="out();">Return</button>
 </div>
     <form id="form" action="delSelect" method="post">
     <table border="1" class="table table-bordered table-hover" >
@@ -149,7 +151,7 @@
             <th><input type="checkbox" id="firstCb"></th>
             <th>item</th>
             <th>status</th>
-            <th>操作</th>
+            <th>Operate</th>
         </tr>
         </thead>
         <tbody>
@@ -159,8 +161,8 @@
                 <td>{{$val->item}}</td>
                 <td>{{$val->status}}</td>
                 <td>
-                    <a class="btn btn-primary" href="update_list?id={{$val->id}}">修改</a>
-                    <a class="btn btn-warning" href="delSelect?uid={{$val->id}}">删除</a>
+                    <a class="btn btn-primary" href="update_list?id={{$val->id}}">Modify</a>
+                    <a class="btn btn-warning" href="delSelect?uid={{$val->id}}">Delete</a>
                 </td>
             </tr>
         @endforeach
@@ -179,26 +181,26 @@
     <div style="float: left">
         <form action="list_all" method="post" class="form-inline">
             <div class="form-group">
-                <label for="exampleInputName1">姓名</label>
+                <label for="exampleInputName1">Name</label>
                 <input type="text" name="name" class="form-control" id="exampleInputName1" value="{{Session::get('s_name')}}">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail">邮箱</label>
+                <label for="exampleInputEmail">Email</label>
                 <input type="text" name="email" class="form-control" id="exampleInputEmail" value="{{Session::get('s_email')}}">
             </div>
-            <button type="submit" class="btn btn-default">查询</button>
+            <button type="submit" class="btn btn-default">Select</button>
             <input type="hidden" name="_token" value="{{csrf_token()}}">
         </form>
     </div>
     <div style="float: right">
-        <a class="btn btn-primary" href="list_all">添加</a>
+        {{--<a class="btn btn-primary" href="list_all">添加</a>--}}
     </div>
     <table border="1" class="table table-bordered table-hover" >
         <thead>
         <tr>
-            <th>名称</th>
-            <th>邮箱</th>
-            <th>操作</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Operate</th>
         </tr>
         </thead>
         <tbody>
@@ -208,7 +210,7 @@
                     <td>{{$val->name}}</td>
                     <td>{{$val->email}}</td>
                     <td>
-                        <a class="btn btn-success" href="add_friend?friend={{$val->name}}">添加</a>
+                        <a class="btn btn-success" href="add_friend?friend={{$val->name}}">Add</a>
                     </td>
                 </tr>
             @endforeach

@@ -81,46 +81,51 @@
         clear: both;
     }
 </style>
-<body style="background-color: {{Session::get('color')}}">
+<body style="background-color: {{Session::get('color')}}" id="body">
+<h2 style="text-align: center">{{Session::get('name')}}</h2>
 <div class="container" style="width: 700px;margin: auto;margin-top: 50px">
 <div style="float: left">
-    <a class="btn btn-primary" href="add_thing">添加</a>
+    <a class="btn btn-primary" href="add_thing">Add</a>
 </div>
 <div style="float: right;margin: 5px">
-    <button class="btn btn-danger btn-submit" onclick="out();">注销</button>
-    <a class="btn btn-primary" href="change_color">背景</a>
+    <button class="btn btn-danger btn-submit" onclick="out();">Logout</button>
+    <form style="float: right;" action="change_color">
+        <input type="color" name="color" value="{{Session::get('color')}}">
+        <input type="submit" class="btn btn-primary" value="changeColor">
+        {{--<a class="btn btn-primary" href="change_color">change</a>--}}
+    </form>
 </div>
 
     <table border="1" class="table table-bordered table-hover" >
         <thead>
         <tr>
-            <th>list</th>
-            <th>work</th>
-            <th>status</th>
-            <th>leader</th>
-            <th>share</th>
-            <th>操作</th>
+            <th>List</th>
+            <th>Work</th>
+            <th>Status</th>
+            <th>Leader</th>
+            <th>Share</th>
+            <th>Operate</th>
         </tr>
         </thead>
         <tbody>
         @foreach($data as $val)
             <tr>
-                <th><a href="list?id={{$val->id}}">查看</a></th>
+                <th><a href="list?id={{$val->id}}&work={{$val->work}}">View</a></th>
                 <td>{{$val->work}}</td>
                 <td>{{$val->status}}</td>
                 <th>{{$val->name}}</th>
                 @if(Session::get('name') == $val->name)
                     <td>{{$val->share}}</td>
                     <td>
-                        <a class="btn btn-primary" href="update_thing?id={{$val->id}}">修改</a>
-                        <a class="btn btn-warning" href="delete_thing?id={{$val->id}}">删除</a>
+                        <a class="btn btn-primary" href="update_thing?id={{$val->id}}">Modify</a>
+                        <a class="btn btn-warning" href="delete_thing?id={{$val->id}}">Delete</a>
                     </td>
                 @endif
                 @if(Session::get('name') != $val->name)
                     <td>{{$val->share}}</td>
                     <td>
-                        <a class="btn btn-success" href="accept?id={{$val->id}}">接受</a>
-                        <a class="btn btn-danger" href="un_accept?id={{$val->id}}">不接受</a>
+                        <a class="btn btn-success" href="accept?id={{$val->id}}">Accept</a>
+                        <a class="btn btn-danger" href="un_accept?id={{$val->id}}">UnAccept</a>
                     </td>
                 @endif
             </tr>

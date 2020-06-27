@@ -9,7 +9,7 @@
 </head>
     <body style="background-color: {{Session::get('color')}}">
 <div class="container" style="width: 600px">
-    <center><h3>添加List</h3></center>
+    <center><h3>Modify List</h3></center>
     <form action="update_list_op?id={{$data->id}}" method="post">
         <div class="form-group">
             <label for="item" class="col-sm-2 control-label">item：</label>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="form-group">
-            <input class="btn btn-primary" type="submit" value="提交" style="margin-left: 250px">
+            <input class="btn btn-primary" type="submit" value="Submit" style="margin-left: 250px">
         </div>
 
         <input type="hidden" name="_token" value="{{csrf_token()}}">

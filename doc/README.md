@@ -1,22 +1,22 @@
 AWESOME TODO SYSTEM - DEPLOYMENT MANUAL
 Dear user, thanks for choosing the product of our team. Please follow the instruction below, to deploy my system on your own environment.
 
-step1  IDE  
+Step1  IDE  
 php  mysql 
 
-step2  download   
+Step2  download   
 github:	https://github.com/qazyan/laravel
 
-step3  config  
+Step3  config  
 1.  modify the .env file  
 DB_CONNECTION=mysql	  
 DB_HOST=127.0.0.1 	##database_hostname  
-DB_PORT=3306		  
+DB_PORT=3306		##database_port
 DB_DATABASE=project	##database_name   
 DB_USERNAME=root	##database_username  
 DB_PASSWORD=root	##database_password  
 
-2.  build tables in mysql   
+2.  build tables in database
 
 ##build user table   
 CREATE TABLE `project`.`user` (   
@@ -56,8 +56,8 @@ CREATE TABLE `project`.`friend` (
   PRIMARY KEY (`id`),   
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
 
-step4  start   
+Step4  start   
 start the service from the command line using the following command  
 php artisan serve  
 
-welcome to use.
+Welcome to use.

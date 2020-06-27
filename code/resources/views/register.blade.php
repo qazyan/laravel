@@ -23,7 +23,7 @@
         <input type="email" name="email" class="form-control" placeholder="Email" required="">
     </div>
     <div class="form-group">
-        <button class="btn btn-success btn-submit" style="margin-left: 200px">注册</button>
+        <button class="btn btn-success btn-submit" style="margin-left: 200px">register</button>
     </div>
     <div id="response"></div>
 </form>

@@ -23,8 +23,8 @@
                 <input type="email" name="email" class="form-control" placeholder="Email" required="">
             </div>
             <div class="form-group">
-                <button class="btn btn-success" style="margin-left: 170px" onclick="register();">注册</button>
-                <button class="btn btn-success btn-submit">登录</button>
+                <button class="btn btn-success" style="margin-left: 170px" onclick="register();">register</button>
+                <button class="btn btn-success btn-submit">login</button>
             </div>
             <div id="response"></div>
         </form>
@@ -38,7 +38,7 @@
     <script>
         $.ajaxSetup({
             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')    //携带csrf_token，否则会返回错误500
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
 
@@ -57,7 +57,7 @@
                 },
                 error: data => {
                     if (data.status === 422) {
-                        var errors = $.parseJSON(data.responseText);    //转json格式，或直接使用 data.responseJSON
+                        var errors = $.parseJSON(data.responseText);
                         $.each(errors, function (key, value) {
                             $('#response').addClass("alert alert-danger");
                             if ($.isPlainObject(value)) {
@@ -67,7 +67,7 @@
 
                                 });
                             } else {
-                                $('#response').show().append(value + "<br/>"); //this is my div with messages
+                                $('#response').show().append(value + "<br/>");
                             }
                         });
                     }

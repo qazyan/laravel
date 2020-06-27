@@ -108,7 +108,7 @@ class ExampleTest extends TestCase
 
 
 
-/*    public function testLogin1()
+    public function testLogin1()
     {
         $response = $this->get('/login1');
         $response->assertViewIs('login');
@@ -132,5 +132,5 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/login5');
         $response->assertViewIs('login');
-    }*/
+    }
 }

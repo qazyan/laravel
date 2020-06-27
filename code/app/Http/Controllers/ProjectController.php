@@ -10,9 +10,28 @@ use App\Todolist;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use PhpParser\Node\Expr\List_;
+use function PHPUnit\Framework\StaticAnalysis\HappyPath\AssertNull\consume;
 
 class ProjectController extends Controller
 {
+    //修改背景色
+    public function change_color(Request $request){
+        //#6deed0淡绿
+        //#827575灰色
+        //rgba(20,23,21,0.46)
+        /*$color = Session::get('color');
+        if ($color == 'aliceblue'){
+            Session::put('color','rgba(20,23,21,0.46)');
+        }
+        if ($color == 'rgba(20,23,21,0.46)'){
+            Session::put('color','aliceblue');
+        }
+        return redirect("/index");*/
+        $color = $request->get('color');
+        Session::put('color',$color);
+        return redirect('/index');
+    }
+
     /**
      * 登录界面
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -247,6 +266,8 @@ class ProjectController extends Controller
     public function list(Request $request){
         $id = $request->get('id');
         Session::put('id',$id);
+        $work = $request->get('work');
+        Session::put('work',$work);
         return redirect('list_all');
     }
 
@@ -400,21 +421,91 @@ class ProjectController extends Controller
         return redirect('list_all');
     }
 
-    public function change_color(){
-        //#6deed0淡绿
-        //#827575灰色
-        //rgba(20,23,21,0.46)
-        $color = Session::get('color');
-        if ($color == 'aliceblue'){
-            Session::put('color','rgba(20,23,21,0.46)');
-        }
-        if ($color == 'rgba(20,23,21,0.46)'){
-            Session::put('color','aliceblue');
-        }
-        return redirect("/index");
-    }
-
     public function login1(){
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
+        $x = 'sad';
         return view('login');
     }
     public function login2(){
